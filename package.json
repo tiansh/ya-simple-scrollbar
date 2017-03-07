@@ -1,0 +1,20 @@
+{
+  "name": "ya-simple-scrollbar",
+  "version": "0.2.1",
+  "description": "Yet another simple vanilla javascript library for creating a custom scrollbar cross-browser and cross-devices.",
+  "main": "ya-simple-scrollbar.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiansh/ya-simple-scrollbar.git"
+  },
+  "keywords": [
+    "scrollbar",
+    "custom-scrollbar"
+  ],
+  "author": "Tiansh <tiansheng111@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tiansh/ya-simple-scrollbar/issues"
+  },
+  "homepage": "https://github.com/tiansh/ya-simple-scrollbar#readme"
+}

@@ -1,0 +1,107 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>yaSimpleScrollbar</title>
+<meta name="keywords" content="scrollbar, custom" />
+<meta name="description" content="Yet another simple vanilla javascript library for creating a custom scrollbar cross-browser and cross-devices." />
+<style>
+  h1 { text-align: center; margin: 20px; font-size: 200%; }
+  h2 { font-size: 120%; margin: 0 15px; text-align: center; }
+  #example_container { width: 100%; margin: 0 auto; }
+  #example { width: 600px; height: 300px; border: 1px solid #ccc; margin: 0 auto; overflow: hidden; resize: both; }
+  #actions { text-align: center; padding: 10px; }
+  #actions button { width: 60px; height: 40px; vertical-align: middle; }
+  #learn-more { text-align: center; }
+  big { font-size: 125%; }
+  small { font-size: 80%; }
+  .text { display: none; }
+</style>
+</head>
+<body>
+<h1>yaSimpleScrollbar</h1>
+<div id="example_container">
+<div id="example">
+<div class="text"><h2>Meow? Meow.</h2><img src="page/meow.png" style="float: left; margin: 0 10px 10px 0;"><script>
+; (function () {
+  var ss = true;
+  var randomWord = function () {
+    var r = Math.random();
+    if (r < 0.9) return (ss ? 'M' : 'm') + 'eow';
+    if (r < 0.97) return (ss ? 'M' : 'm') + 'eow-meow';
+    return (ss ? 'M' : 'm') + '-e-o-w';
+  };
+  var randomMark = function () {
+    var r = Math.random();
+    ss = false;
+    if (r < 0.6) return '';
+    if (r < 0.65) return ',';
+    ss = true;
+    var b = Math.random() < 0.2 ? '<br />' : '';
+    if (r < 0.9) return '.' + b;
+    if (r < 0.95) return '?' + b;
+    return '!' + b;
+  };
+  var ss = true, count = 0, target = 500 + Math.random(200), t = [];
+  for (; count < target || !ss; count++) {
+    t.push(randomWord() + randomMark());
+  }
+  document.write(t.join(' '));
+}());
+</script></div>
+<div class="text"><h2>Lorem ipsum</h2><script>
+; (function () {
+  var text = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+  for (var i = 0; i < 2; i++) document.write(text);
+}());
+</script></div>
+<div class="text"><h2>99 Bottle of Beer</h2><script>
+; (function () {
+  var i, n, l, t;
+  for (i = 198; i; i--) {
+    n = i >>> 1; l = i & 1;
+    t = (n ? n : 'no more') + ' bottle' + (n === 1 ? '' : 's');
+    document.writeln(l ? 'Take one down and pass it around, ' + t + ' of beer on the wall.<br /><br />' :
+      (t + ' of beer on the wall, ' + t + ' of beer.<br />'));
+  }
+  document.writeln('No more bottles of beer on the wall, no more bottles of beer.<br />');
+  document.writeln('Go to the store and buy some more, 99 bottles of beer on the wall.<br />');
+}());
+</script></div>
+</div>
+<div id="actions">
+  <button onclick="changeText()">T&#128472;</button>
+  <button id="decFontSize" onclick="changeFontSize(-1)"><small>A</small><sup>&#x25bc;</sup></button>
+  <button id="incFontSize" onclick="changeFontSize(1)"><big>A</big><sup>&#x25b2;</sup></button>
+</div>
+</div>
+<div id="learn-more">
+  <a href="https://github.com/tiansh/ya-simple-scrollbar">Learn More on GitHub</a>
+</div>
+<script src="./ya-simple-scrollbar.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  yaSimpleScrollbar.attach(document.getElementById('example'));
+});
+var fontSize = [10, 11, 12, 14, 16, 18, 20, 22, 24, 26, 28, 36, 48], chosedFontSize = 6;
+var textBlocks = ['99-bottles-of-beer', 'lorem-ipsum'];
+var changeFontSize = function (d) {
+  var example = document.getElementById('example');
+  var decFontSize = document.getElementById('decFontSize');
+  var incFontSize = document.getElementById('incFontSize');
+  chosedFontSize = Math.min(Math.max(0, chosedFontSize + d), fontSize.length - 1) || 0;
+  document.getElementById('example').style.fontSize = fontSize[chosedFontSize] + 'px';
+  decFontSize.disabled = chosedFontSize === 0;
+  incFontSize.disabled = chosedFontSize === fontSize.length - 1;
+};
+var allText = document.getElementsByClassName('text'), chosedText = allText.length - 1;
+var changeText = function () {
+  allText[chosedText].style.display = 'none';
+  chosedText = (chosedText + 1) % allText.length;
+  allText[chosedText].style.display = 'block';
+};
+changeText();
+changeFontSize(0);
+</script>
+</body>
+</html>
