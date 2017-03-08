@@ -1,3 +1,14 @@
+/*!
+ * yaSimpleScrollbar v1.0
+ *
+ * Copyright (C) Sheng Tian
+ *
+ * The MIT License
+ *   https://github.com/tiansh/ya-simple-scrollbar/blob/master/LICENSE
+ *
+ * Based on buzinas/simple-scrollbar, and, marcj/css-element-queries
+ *   https://github.com/tiansh/ya-simple-scrollbar/blob/master/CREDITS.md
+ */
 ; (function () {
 
   // override styles here in your css file for customize styles
