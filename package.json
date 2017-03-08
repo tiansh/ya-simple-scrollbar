@@ -1,7 +1,7 @@
 {
   "name": "ya-simple-scrollbar",
   "version": "1.0.0",
-  "description": "Yet another simple vanilla javascript library for creating a custom scrollbar cross-browser and cross-devices.",
+  "description": "Yet Another Simple Scrollbar. A lightweight javascript library for creating customlized scrollbar.",
   "main": "ya-simple-scrollbar.js",
   "repository": {
     "type": "git",

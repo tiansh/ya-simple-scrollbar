@@ -1,10 +1,11 @@
-# SimpleScrollbar
+# yaSimpleScrollbar
 
-Yet another simple vanilla javascript library for creating a custom scrollbar cross-browser and cross-devices.
+Yet Another Simple Scrollbar. A lightweight javascript library for creating customlized scrollbar.
 
 * Lightweight vanilla JavaScript
 * All native events supported, smooth and sweet
 * Perfect with dynamic content
+* Good performance, without `setInterval` trick
 
 ## Demo
 
