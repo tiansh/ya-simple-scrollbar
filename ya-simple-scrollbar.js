@@ -86,7 +86,6 @@
       reset();
     };
     var onScroll = function (event) {
-      console.log('scroll', event);
       newWidth = element.offsetWidth;
       newHeight = element.offsetHeight;
       if (dirty) return; dirty = true;
