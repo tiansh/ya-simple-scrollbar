@@ -161,7 +161,7 @@
       var moveAction = function (newTop) {
         newTop = Math.max(0, Math.min(containerHeight - scrollbarHeight, newTop));
         if (scrollbarTop === newTop) return;
-        content.scrollTop = newTop * contentHeight / (containerHeight - scrollbarHeight);
+        content.scrollTop = newTop * (contentHeight - containerHeight) / (containerHeight - scrollbarHeight);
       };
 
       return {
